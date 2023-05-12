@@ -35,6 +35,10 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
+          - name: WORDPRESS_DB_USER
+            value: wp-user
+          - name: WORDPRESS_DB_DATABASE
+            value: wordpress
           - name: WORDPRESS_DB_HOST
             value: {{ .Release.Name }}-mysql
           - name: WORDPRESS_DB_PASSWORD

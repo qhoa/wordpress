@@ -40,6 +40,15 @@ spec:
               secretKeyRef:
                 name: {{ .Release.Name }}-pass
                 key: password
+          - name: MYSQL_DATABASE
+            value: wordpress
+          - name: MYSQL_USER
+            value: wp-user
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-pass
+                key: password
           volumeMounts:
             - name: {{ .Chart.Name }}-persistent-storage
               mountPath: {{ .Values.database.mountPath }}

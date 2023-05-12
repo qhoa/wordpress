@@ -60,3 +60,10 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create random password
+*/}}
+{{- define "init.random.pw" -}}
+{{- randAlphaNum 13 }}
+{{- end }}

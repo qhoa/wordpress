@@ -8,11 +8,11 @@ image:
   repository: wordpress
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 6.2-apache
+  tag: latest
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: "wordpress"
 
 serviceAccount:
   # Specifies whether a service account should be created
